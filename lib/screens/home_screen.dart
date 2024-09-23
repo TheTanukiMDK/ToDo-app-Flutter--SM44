@@ -23,6 +23,9 @@ class HomeScreen extends StatelessWidget { // agregar un parámetro opcional lla
             onChanged: (value) {
               // Implement task completion logic
             },
+            onDelete: (){
+              Provider.of<TaskProvider>(context, listen: false).deleteTask(task.id); //logica para eliminar 
+            },
           );
         },
       ),
@@ -31,6 +34,7 @@ class HomeScreen extends StatelessWidget { // agregar un parámetro opcional lla
           Navigator.of(context).pushNamed('/add-task');
         },
         child: const Icon(Icons.add),
+        
       ),
     );
   }

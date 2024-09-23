@@ -13,6 +13,10 @@ class TaskProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void deleteTask(String id){ //logica para la funcion de eliminar por ID
+    _tasks.removeWhere((task) => task.id == id);
+    notifyListeners();
+  }
   // Implement methods to update and delete tasks
 
   // You can also add methods for fetching and managing tasks
